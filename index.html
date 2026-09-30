@@ -109,7 +109,8 @@ footer{color:var(--muted);font-size:13px;max-width:75ch;border-top:1px solid var
 .txt{display:flex;flex-direction:column;gap:8px;font-size:13px}
 .ah{font-weight:700;font-size:15px;line-height:1.3}
 .ad-d{color:var(--muted)}
-.ad-d.none{font-style:italic}
+.ad-d.none,.ah.none{font-style:italic;color:var(--muted);font-weight:400}
+.fld h5{margin:0 0 2px;font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .cta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:700;font-size:12px}
 .cta span{font-family:var(--f-mono);font-weight:400;color:var(--muted);font-size:11px}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:12px}
@@ -228,7 +229,9 @@ $("#angles").innerHTML=ORDER.map(k=>{
   <p class="line">${A.line}</p>
   <div class="stats"><div><b>${fmt(sum(g,"l"))}</b><span>likes</span></div><div><b>${fmt(sum(g,"c"))}</b><span>comments</span></div><div><b>${fmt(sum(g,"s"))}</b><span>shares</span></div></div>
   <div class="shots">${g.map(a=>`<figure class="shot"><img src="img/${a.imgs[0]}.jpg" alt="Ad ${a.r}" loading="lazy" data-zoom>
-   <div class="txt"><div class="ah">${a.h||"No headline"}</div>${a.d?`<div class="ad-d">${a.d}</div>`:'<div class="ad-d none">No description</div>'}
+   <div class="txt"><div class="fld"><h5>Headline</h5><div class="ah${a.h?"":" none"}">${a.h||"None"}</div></div>
+   <div class="fld"><h5>Primary text</h5><div class="ad-d none">Not in the AdSpy export</div></div>
+   <div class="fld"><h5>Description</h5><div class="ad-d${a.d?"":" none"}">${a.d||"None"}</div></div>
    <div class="cta">${a.cta||"No CTA"} <span>${a.url||"THERAPETMD.COM"}</span></div>
    <dl class="kv"><dt>Rank</dt><dd>#${a.r} by likes</dd><dt>Reactions</dt><dd>${fmt(a.l)} likes · ${fmt(a.c)} comments · ${fmt(a.s)} shares</dd><dt>Ran</dt><dd>${a.created} → ${a.last} (${days(a)} days)${active(a)?" · active":""}</dd><dt>Markets</dt><dd>${a.geo.join(", ")}</dd></dl>
    <a href="https://www.facebook.com/${a.post}" target="_blank" rel="noopener">View Facebook post</a></div></figure>`).join("")}</div>
