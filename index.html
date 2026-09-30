@@ -104,7 +104,17 @@ footer{color:var(--muted);font-size:13px;max-width:75ch;border-top:1px solid var
 .angle{display:flex;flex-direction:column;gap:12px;padding:20px;grid-template-columns:none}
 .angle .top-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .angle .line{color:var(--muted);max-width:65ch}
-.angle .shots{padding:0;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));align-items:start}
+.angle .shots{padding:0;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));align-items:start;gap:16px}
+.shot{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;gap:10px}
+.txt{display:flex;flex-direction:column;gap:8px;font-size:13px}
+.ah{font-weight:700;font-size:15px;line-height:1.3}
+.ad-d{color:var(--muted)}
+.ad-d.none{font-style:italic}
+.cta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:700;font-size:12px}
+.cta span{font-family:var(--f-mono);font-weight:400;color:var(--muted);font-size:11px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0;font-size:12px}
+.kv dt{color:var(--muted);font-family:var(--f-mono);font-size:11px}
+.kv dd{margin:0;min-width:0}
 .brief{display:grid;grid-template-columns:2fr 1fr;gap:20px;padding-top:4px}
 .brief h4{margin:0 0 6px;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .brief ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
@@ -138,7 +148,7 @@ footer{color:var(--muted);font-size:13px;max-width:75ch;border-top:1px solid var
 
 <section>
   <h2>Six angles to brief</h2>
-  <p class="hint">Images are ordered by likes. Click to enlarge. The number links to the Facebook post.</p>
+  <p class="hint">Each ad shows its image and full text. Ordered by likes. Click an image to enlarge.</p>
   <div id="angles" class="angles"></div>
 </section>
 
@@ -217,7 +227,11 @@ $("#angles").innerHTML=ORDER.map(k=>{
   <div class="top-row"><h3>${A.name}</h3>${A.top?'<span class="badge win">Top performer</span>':""}</div>
   <p class="line">${A.line}</p>
   <div class="stats"><div><b>${fmt(sum(g,"l"))}</b><span>likes</span></div><div><b>${fmt(sum(g,"c"))}</b><span>comments</span></div><div><b>${fmt(sum(g,"s"))}</b><span>shares</span></div></div>
-  <div class="shots">${g.map(a=>`<figure class="shot"><img src="img/${a.imgs[0]}.jpg" alt="Ad ${a.r}" loading="lazy" data-zoom><figcaption><a href="https://www.facebook.com/${a.post}" target="_blank" rel="noopener">#${a.r}</a> · ${fmt(a.l)} likes</figcaption></figure>`).join("")}</div>
+  <div class="shots">${g.map(a=>`<figure class="shot"><img src="img/${a.imgs[0]}.jpg" alt="Ad ${a.r}" loading="lazy" data-zoom>
+   <div class="txt"><div class="ah">${a.h||"No headline"}</div>${a.d?`<div class="ad-d">${a.d}</div>`:'<div class="ad-d none">No description</div>'}
+   <div class="cta">${a.cta||"No CTA"} <span>${a.url||"THERAPETMD.COM"}</span></div>
+   <dl class="kv"><dt>Rank</dt><dd>#${a.r} by likes</dd><dt>Reactions</dt><dd>${fmt(a.l)} likes · ${fmt(a.c)} comments · ${fmt(a.s)} shares</dd><dt>Ran</dt><dd>${a.created} → ${a.last} (${days(a)} days)${active(a)?" · active":""}</dd><dt>Markets</dt><dd>${a.geo.join(", ")}</dd></dl>
+   <a href="https://www.facebook.com/${a.post}" target="_blank" rel="noopener">View Facebook post</a></div></figure>`).join("")}</div>
   <div class="brief"><div><h4>Make</h4><ul>${A.make.map(x=>`<li>${x}</li>`).join("")}</ul></div><div><h4>Test</h4><p>${A.test}</p></div></div>
  </article>`}).join("");
 
