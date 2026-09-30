@@ -95,89 +95,72 @@ footer{color:var(--muted);font-size:13px;max-width:75ch;border-top:1px solid var
 .hl{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
 .hl:last-child{border:0}
 .hl div{min-width:0}
+
+.rules{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.rules li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;min-width:0}
+.rules b{display:block;font-family:var(--f-display);font-size:17px;margin-bottom:4px}
+.hint{color:var(--muted);font-size:13px}
+.angles{display:flex;flex-direction:column;gap:20px}
+.angle{display:flex;flex-direction:column;gap:12px;padding:20px;grid-template-columns:none}
+.angle .top-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.angle .line{color:var(--muted);max-width:65ch}
+.angle .shots{padding:0;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));align-items:start}
+.brief{display:grid;grid-template-columns:2fr 1fr;gap:20px;padding-top:4px}
+.brief h4{margin:0 0 6px;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.brief ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.brief p{margin:0}
+@media(max-width:640px){.brief{grid-template-columns:1fr}}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.specs div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:2px}
+.specs b{font-family:var(--f-mono);font-size:15px}
+.specs span{color:var(--muted);font-size:13px}
+.hl{align-items:center}
 </style>
 
 <div class="wrap">
 <header>
   <div class="eyebrow">AdSpy · static image ads · 1 Jun – 29 Sep 2026</div>
   <h1>TheraPet winning statics</h1>
-  <p class="lede">What is working in TheraPet's static image ads, ranked by likes, and what to brief next. Built from 15 ads and 24 images pulled from AdSpy on 30 Sep 2026.</p>
-  <div class="meta"><span class="tag">Advertiser: TheraPet / Therapet</span><span class="tag">Site: therapetmd.com</span><span class="tag">Markets: US, UK, UAE, CA, AU, NZ, NL, BR</span></div>
+  <p class="lede">The 11 best-liked TheraPet static ads (US, UK, UAE, CA, AU, NZ, NL), what they have in common, and what to make next.</p>
 </header>
 
 <div class="kpis" id="kpis"></div>
 
 <section>
-  <div class="sechead"><div class="eyebrow">Read this first</div><h2>Six things the data says</h2></div>
-  <div class="takeaways">
-    <div class="take"><h3>One offer static carries the account</h3><p>"Shop Bundle Deals – Up To 50% OFF" (two placements) has 5,494 likes, 4,944 comments and 805 shares. It started 3 Nov 2025 and was still running on 28 Sep 2026. Nothing else is close.</p></div>
-    <div class="take"><h3>The problem is named in the copy</h3><p>The best ad's description is "Stop Indoor Peeing And Anxiety In Dogs With This Science-Driven Solution". The other top dog ad leads with "anxious dog feel safe and calm". Name one pain, then show the fix.</p></div>
-    <div class="take"><h3>Real photos beat designed graphics</h3><p>Five of the six ads above 800 likes are plain photos with no text on the image: product on a counter, a smiling owner, a cat sniffing the diffuser. The one designed graphic (price, badges, puppy) has the third-highest likes.</p></div>
-    <div class="take"><h3>Same headline, 11× spread</h3><p>"There are 3 types of cat ladies. Which one are you" runs over four different photos. Likes range from 146 to 1,649, so the photo decides the result. The set has run 216 days and is still live, which makes it the best template to iterate.</p></div>
-    <div class="take"><h3>Two looks in the packaging</h3><p>The two November 2025 ads show blue "TheraPetMD" boxes. The 2026 ads show the current green (dog) and orange (cat) TheraPet boxes with the duck diffuser. Use the current packaging in new statics.</p></div>
-    <div class="take"><h3>Brazil sells a different product</h3><p>The Portuguese page advertises a cat scratcher and a steam brush with bold text on the image. It has 4 ads and 114 likes in total, so treat it as a test, not a source of winning patterns.</p></div>
+  <h2>What wins</h2>
+  <ol class="rules">
+    <li><b>Real photos, no text on the image.</b> Five of the six ads above 800 likes are plain phone-style photos. The headline and offer go in the ad copy.</li>
+    <li><b>Show the product large.</b> Best cat photo: duck diffuser and orange box filling the frame (1,649 likes). Worst: cat portrait with a small box (146 likes). Same headline.</li>
+    <li><b>Show quantity for offers.</b> The top ad (5,211 likes) is a photo of several diffusers and refills lined up on a counter.</li>
+    <li><b>Use current packaging.</b> Green box for dogs, orange for cats, duck diffuser. Blue "TheraPetMD" boxes are only in the Nov 2025 ads.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Six angles to brief</h2>
+  <p class="hint">Images are ordered by likes. Click to enlarge. The number links to the Facebook post.</p>
+  <div id="angles" class="angles"></div>
+</section>
+
+<section>
+  <h2>Specs</h2>
+  <div class="specs">
+    <div><b>1080 × 1350</b><span>Feed, main size (4:5)</span></div>
+    <div><b>1080 × 1080</b><span>Feed, square crop</span></div>
+    <div><b>1080 × 1920</b><span>Stories/Reels. Keep text out of the top 250 px and bottom 340 px.</span></div>
+    <div><b>CTA</b><span>Set "Shop now" in Ads Manager, not on the image.</span></div>
   </div>
 </section>
 
 <section>
-  <div class="sechead"><div class="eyebrow">Winning angles</div><h2>Static playbook for the designer</h2>
-  <p class="lede">Ads are grouped by shared message. Each card shows the actual creatives, ordered by likes, with a brief built from what they have in common. Click any image to enlarge it.</p></div>
-  <div id="angles" style="display:flex;flex-direction:column;gap:16px"></div>
-</section>
-
-<section>
-  <div class="sechead"><div class="eyebrow">Copy bank</div><h2>Headlines and lines that ran</h2>
-  <p class="lede">Use these verbatim or as a pattern for the text on the image. Likes are summed across placements with the same headline.</p></div>
+  <h2>Headlines that ran</h2>
   <div class="panel" id="copybank"></div>
 </section>
 
-<section>
-  <div class="sechead"><div class="eyebrow">Production notes</div><h2>Specs and checklist</h2></div>
-  <div class="two">
-    <div class="panel"><h3>Sizes</h3>
-      <dl class="spec">
-        <dt>Feed, primary</dt><dd>1080 × 1350 px (4:5). Every ad in this set is a single image or a carousel card, so start here.</dd>
-        <dt>Feed, square</dt><dd>1080 × 1080 px (1:1) as a second crop.</dd>
-        <dt>Stories / Reels</dt><dd>1080 × 1920 px (9:16). Keep text out of the top 250 px and bottom 340 px.</dd>
-        <dt>Carousel card</dt><dd>1080 × 1080 px. GiroCat uses 10 cards.</dd>
-        <dt>CTA button</dt><dd>Set in Ads Manager, not in the image. Winners use "Shop now" (11 of 15), "Learn more" and "See details".</dd>
-      </dl></div>
-    <div class="panel"><h3>Text on the image</h3>
-      <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px">
-        <li>US winners carry no text on the image. The headline and offer sit in the ad copy.</li>
-        <li>If you do use text (the promo graphic), keep to a price, a sale line and three short badges.</li>
-        <li>Show the current packaging: green for dogs, orange for cats, with the duck diffuser.</li>
-        <li>Shoot on a real surface in daylight. Avoid studio backdrops.</li>
-        <li>Check legibility at phone width before export.</li>
-      </ul></div>
-  </div>
-  <ul class="checks">
-    <li>Pick one angle from the playbook per static. Do not mix two.</li>
-    <li>Make at least 3 photo variants per winning headline. The cat-ladies set shows an 11× spread from the photo alone.</li>
-    <li>Make separate dog and cat versions. Dog ads lead with peeing and anxiety, cat ads with identity.</li>
-    <li>Keep offer, price and shipping claims identical to the landing page.</li>
-    <li>Localise text for Brazil (PT-BR) rather than translating layouts one to one.</li>
-    <li>Name files angle_headline_variant_size so results map back to the brief.</li>
-  </ul>
-</section>
-
-<section>
-  <div class="sechead"><div class="eyebrow">Ad library</div><h2>All 15 ads</h2>
-  <p class="lede">Filter by angle. Click an image to enlarge it. "Facebook post" opens the live post.</p></div>
-  <div class="filters" id="filters" role="group" aria-label="Filter by angle"></div>
-  <div class="grid" id="grid"></div>
-</section>
-
-<section>
-  <div class="sechead"><div class="eyebrow">By market</div><h2>Where the engagement is</h2></div>
-  <div class="panel tablewrap"><table id="geo"><thead><tr><th>Market</th><th>Ads seen</th><th>Likes on those ads</th><th>Share of likes</th></tr></thead><tbody></tbody></table></div>
-  <p class="mini">Ads run in several countries, so a like total counts once for every country the ad shows in. Use it to compare markets, not to add up.</p>
-</section>
-
-<footer>Source: AdSpy export "therapet_adspy_images.json", advertiser search "therapet", media type Photo, seen 1 Jun – 29 Sep 2026, ordered by total likes, scraped 30 Sep 2026. Likes, comments and shares are public post reactions and say nothing about spend or sales. Days running is first seen to last seen. "Active" means last seen on or after 25 Sep 2026. Creative images are the files AdSpy stored, so some are cropped previews.</footer>
+<footer>Source: AdSpy export, advertiser "therapet", photo ads seen 1 Jun – 29 Sep 2026, scraped 30 Sep 2026. Brazil ads are excluded. Likes, comments and shares are public post reactions, not sales or spend. Days running is first seen to last seen.</footer>
 </div>
-
 <div id="lb" hidden role="dialog" aria-label="Enlarged creative"><img alt=""></div>
+
 <script>
 const ADS=[
 {r:1,pg:"TheraPet",fmt:"Single image",created:"Nov 3, 2025",last:"Sep 28, 2026",n:1,imgs:["3BTuIefD5jzrmGmh"],h:"Shop Bundle Deals – Up To 50% OFF",d:"Stop Indoor Peeing And Anxiety In Dogs With This Science-Driven Solution",cta:"Shop now",l:5211,c:4851,s:784,geo:["United States","United Kingdom","United Arab Emirates"],post:"100068524006696/posts/1139128278381295",a:"offer"},
@@ -186,97 +169,61 @@ const ADS=[
 {r:4,pg:"TheraPet",fmt:"Single image",created:"Jun 30, 2026",last:"Jul 3, 2026",n:1,imgs:["eFOOgYS2ogh46bNx"],h:"We stopped charging for shipping. One email is why.",d:"This Week Only...",cta:"Shop now",l:343,c:300,s:7,geo:["Australia"],post:"100068524006696/posts/1325762899717831",a:"story"},
 {r:5,pg:"TheraPet",fmt:"Single image",created:"Feb 25, 2026",last:"Sep 25, 2026",n:1,imgs:["a0JmUp2YpIHhHogc"],h:"There are 3 types of cat ladies. Which one are you",d:"Give your Cat the peace of mind they deserve with TheraPet!",cta:"Shop now",l:229,c:36,s:13,geo:["New Zealand","United States","Australia"],post:"100068524006696/posts/1225525543074901",a:"cat"},
 {r:6,pg:"TheraPet",fmt:"Single image",created:"Feb 25, 2026",last:"Sep 29, 2026",n:1,imgs:["vicrDqwRH7HMbRmW"],h:"There are 3 types of cat ladies. Which one are you",d:"Give your Cat the peace of mind they deserve with TheraPet!",cta:"Shop now",l:146,c:6,s:5,geo:["United States","Canada"],post:"100068524006696/posts/1225525559741566",a:"cat"},
-{r:7,pg:"Therapet (BR)",fmt:"Carousel, 10 cards",created:"Aug 27, 2026",last:"Sep 14, 2026",n:10,imgs:["Fgdbz9otdJIFKJcn","dA4qmAwD74WnoK1Q","iB0ZYhjsFT8g45as","yqO28HAcvs8QvHPg","JDZlJ1prPSd2VnI6","UL19uETf8EmLByUh","auCymizfgdoGM5Po","wGs2FkUx3Ck4IM0W","a5q46ibw0mEwywTD","hv8pu2Ku4EBJWyoT"],h:"GiroCat™ - O Antiestresse Favorito do Seu Gato.",d:"4.8/5 ⭐⭐⭐⭐⭐",cta:"Shop now",l:18,c:0,s:null,geo:["Brazil"],post:"61588993843142/posts/122115547551299794",a:"br"},
-{r:8,pg:"Therapet (BR)",fmt:"Single image",created:"Jun 15, 2026",last:"Jun 19, 2026",n:1,imgs:["jHAZOycVjHbfuK4C"],h:"A ideia maluca deste dono de gato mudou tudo.",d:"4.8/5 ⭐⭐⭐⭐⭐",cta:"See details",l:5,c:0,s:null,geo:["Brazil"],post:"61588993843142/posts/122109186579299794",a:"br"},
 {r:9,pg:"TheraPet",fmt:"Single image",created:"Feb 25, 2026",last:"Sep 28, 2026",n:1,imgs:["likmsISVC02rYiSB"],h:"There are 3 types of cat ladies. Which one are you",d:"Give your Cat the peace of mind they deserve with TheraPet!",cta:"Shop now",l:1649,c:466,s:147,geo:["Netherlands","United States","Australia","Canada"],post:"100068524006696/posts/1225525636408225",a:"cat"},
 {r:10,pg:"TheraPet",fmt:"Single image",created:"Feb 24, 2026",last:"Sep 23, 2026",n:1,imgs:["6e1lh8ToXCfwTkHJ"],h:null,d:null,cta:"Shop now",l:873,c:462,s:88,geo:["United States","Australia","United Kingdom"],post:"100068524006696/posts/1224769996483789",a:"nocopy"},
 {r:11,pg:"TheraPet",fmt:"Single image",created:"Feb 25, 2026",last:"Sep 20, 2026",n:1,imgs:["QGScZBXIgXjpZqZa"],h:"There are 3 types of cat ladies. Which one are you",d:"Give your Cat the peace of mind they deserve with TheraPet!",cta:"Shop now",l:815,c:284,s:87,geo:["United States","Canada","United Kingdom"],post:"100068524006696/posts/1225525573074898",a:"cat"},
 {r:12,pg:"TheraPet",fmt:"Single image",created:"Nov 3, 2025",last:"Aug 12, 2026",n:1,imgs:["WlLn3uTStVS6X3ru"],h:"Shop Bundle Deals – Up To 50% OFF",d:"Stop Indoor Peeing And Anxiety In Dogs With This Science-Driven Solution",cta:null,l:283,c:93,s:21,geo:["United States"],post:"100068524006696/posts/1139128231714633",a:"offer"},
 {r:13,pg:"TheraPet",fmt:"Single image",created:"May 27, 2026",last:"Aug 7, 2026",n:1,imgs:["8tAC42LjxXu1hLCa"],h:"We stopped charging for shipping. One email is why.",d:"This Week Only...",cta:"Shop now",l:160,c:0,s:2,geo:["United States"],post:"100068524006696/posts/1297196129241175",a:"story"},
-{r:14,pg:"Therapet (BR)",fmt:"Single image",created:"May 8, 2026",last:"Aug 4, 2026",n:1,imgs:["jjlYhUvrTTOTuh95"],h:"A ideia maluca deste dono de gato mudou tudo.",d:"4.8/5 ⭐⭐⭐⭐⭐",cta:"See details",l:79,c:12,s:4,geo:["Brazil"],post:"61588993843142/posts/122102152467299794",a:"br"},
-{r:15,pg:"Therapet (BR)",fmt:"Single image",created:"Jul 27, 2026",last:"Sep 1, 2026",n:1,imgs:["7qUhoiBeYkmyPrnP"],h:"A ideia maluca deste dono de gato mudou tudo.",d:"4.8/5 ⭐⭐⭐⭐⭐",cta:"Shop now",l:12,c:1,s:null,geo:["Brazil"],post:"61588993843142/posts/122113951989299794",a:"br"}
 ];
 const ANG={
  offer:{name:"Offer + problem (dogs)",top:true,
-  why:"Highest reactions on the account by a wide margin and the longest-running static. The image is a plain phone photo. The offer and the dog problem live in the ad text.",
-  brief:["Photo of several diffusers and refill bottles lined up on a real counter, so the bundle is visible at a glance (#1). A second version shows two kits side by side (#12).","No text on the image. The headline \"Up to 50% OFF\" and \"Stop indoor peeing and anxiety in dogs\" go in the ad copy.","Both use the older blue TheraPetMD boxes. Shoot the same idea with the current green dog packaging.","Keep it looking like a customer's own photo: uneven light, everyday surface."],
-  test:"Same bundle photo with current packaging vs the old blue boxes. Try a portrait crop of two boxes (#12) against the landscape crop (#1).",fmt:"1080×1350, CTA Shop now"},
- cat:{name:"Cat-ladies hook (cats)",top:false,
-  why:"Same headline on four photos. Likes run 146 to 1,649. The winner fills the frame with the duck diffuser and orange TheraPet box in warm sunlight. The weakest shows a cat with the box small at the edge.",
-  brief:["Product large and readable: duck diffuser on top of the orange refill bottles and box, TheraPet logo legible (best, 1,649).","Cat behaviour shots work when the diffuser is in frame: a cat sniffing the plugged-in unit (815), the unit in a wall socket (229).","Avoid cat portraits where the box is a small object at the side (146).","No text on the image. The \"3 types of cat ladies\" headline is in the ad text."],
-  test:"Make 4 to 6 new photos: product hero in sunlight, cat sniffing, cat on the box, unit plugged in behind a sofa. Judge by likes and shares.",fmt:"1080×1350 and 1080×1080"},
- calm:{name:"Calm benefit (dogs)",top:false,
-  why:"The only designed promo graphic in the top group. 1,117 likes and 218 shares, the second most shares on the account.",
-  brief:["Green dog kit beside a happy golden retriever puppy on a soft green glow.","Struck-through old price ($31.49) and the new price large ($20.00/Kit), with a clearance line above.","Three green pill badges: Vet Recommended, Safe & Drug-Free Relief, 24/7 Calming Effect.","Headline \"Help your anxious dog feel safe and calm\" sits in the ad text."],
-  test:"Same layout with a calm dog on a sofa instead of a puppy cutout. Try two badges instead of three.",fmt:"1080×1350, CTA Learn more"},
- multi:{name:"Multi-pack urgency",top:false,
-  why:"852 likes and 520 comments in Canada. The image shows the pack itself.",
-  brief:["Top-down photo of an open cardboard box packed with several green dog kits and diffusers (#3).","Feels like an unboxing. No text on the image.","\"This Week Only...\" and \"One diffuser wasn't enough. So we made 3 affordable.\" go in the ad copy."],
-  test:"Unboxing shot vs three kits lined up on a table. Add a hand pulling one out.",fmt:"1080×1350, CTA Shop now"},
- story:{name:"Story hook (free shipping)",top:false,
-  why:"A parcel photo paired with a curiosity headline. 300 comments on 343 likes in Australia, but few shares. The US version (#13) uses a box close-up and drew 160 likes.",
-  brief:["Photo of a taped brown shipping box with labels, shot at home (#4), so the delivery feels real.","No text on the image. \"We stopped charging for shipping. One email is why.\" is the headline.","Second version: dog kit box and diffuser close-up on a table (#13)."],
-  test:"Parcel at a front door vs parcel on a bed vs the kit unboxed.",fmt:"1080×1350, CTA Shop now"},
- nocopy:{name:"Smiling owner with product",top:false,
-  why:"873 likes and 462 comments with no headline or description. A friendly face plus the dog kit carries it.",
-  brief:["Smiling woman in a kitchen holding the diffuser with the green dog kit box beside her.","Square crop, warm and personal. No text.","Show a face, the box and the diffuser together."],
-  test:"Different owners and homes, plus one with the dog in frame.",fmt:"1080×1080"},
- br:{name:"Brazil (cat scratcher, steam brush)",top:false,
-  why:"Low engagement across 4 ads (114 likes total). The creative differs sharply from the US: bold Portuguese text on the image, sale badges and a star row, selling a cat scratcher and a steam brush.",
-  brief:["Big yellow or white headline blocks: \"100% PERFEITO\", \"DE VERDADE\", \"50% DE DESCONTO!\".","Cat cut-outs on solid colour with benefit bullets and a five-star row.","Carousel cards use square product shots with the TheraPet logo top right.","Write native Portuguese copy for the .com.br store."],
-  test:"Compare one bold text graphic against a plain UGC-style photo like the US winners.",fmt:"1080×1350 single, 1080×1080 carousel"}
+  line:"Bundle photo with the offer in the ad text. Top ad on the account, live for 329 days.",
+  make:["Several diffusers and refills lined up on a real counter.","No text on the image. \"Up to 50% OFF\" and \"Stop indoor peeing and anxiety\" go in the ad copy.","Reshoot with current green dog packaging."],
+  test:"Landscape vs portrait crop of two boxes."},
+ cat:{name:"Cat-ladies hook (cats)",
+  line:"Same headline on four photos: 146 to 1,649 likes. Still live after 216 days.",
+  make:["Duck diffuser on the orange box, logo readable, warm sunlight.","Cat sniffing the plugged-in unit works too.","Skip portraits where the box is small at the edge."],
+  test:"4 to 6 new photos: product hero, cat sniffing, cat on the box, unit plugged in."},
+ calm:{name:"Calm benefit (dogs)",
+  line:"The one designed graphic in the top group. 1,117 likes and 218 shares.",
+  make:["Green dog kit beside a happy golden retriever puppy.","Old price struck through ($31.49), new price big ($20.00/Kit).","Three badges: Vet Recommended, Safe & Drug-Free Relief, 24/7 Calming Effect."],
+  test:"Calm dog on a sofa instead of a puppy cutout. Two badges instead of three."},
+ multi:{name:"Multi-pack urgency",
+  line:"Unboxing photo. 852 likes and 520 comments in Canada.",
+  make:["Open cardboard box packed with several dog kits, shot from above.","No text on the image. \"This Week Only...\" goes in the ad copy."],
+  test:"Unboxing vs three kits in a row on a table."},
+ story:{name:"Free-shipping story",
+  line:"Parcel photo plus a curiosity headline. 300 comments on 343 likes in Australia.",
+  make:["Taped brown shipping box with labels, shot at home.","Headline in the ad copy: \"We stopped charging for shipping. One email is why.\""],
+  test:"Parcel on a bed vs at a front door vs the kit unboxed."},
+ nocopy:{name:"Smiling owner with product",
+  line:"No headline at all. 873 likes and 462 comments.",
+  make:["Smiling owner in a kitchen holding the diffuser, dog kit box beside them.","Square crop, warm light, no text."],
+  test:"Different owners and homes. One with the dog in frame."}
 };
-const ORDER=["offer","cat","calm","multi","story","nocopy","br"];
+const ORDER=["offer","cat","calm","multi","story","nocopy"];
 const $=s=>document.querySelector(s), fmt=n=>n==null?"–":n.toLocaleString("en-US");
 const D=s=>new Date(Date.parse(s+" UTC"));
 const days=a=>Math.round((D(a.last)-D(a.created))/864e5)+1;
 const active=a=>D(a.last)>=new Date("2026-09-25T00:00:00Z");
-const LOOKUP=n=>ADS.filter(a=>a.a===n);
 const sum=(arr,k)=>arr.reduce((t,a)=>t+(a[k]||0),0);
 
-// KPIs
-const totL=sum(ADS,"l"),totC=sum(ADS,"c"),totS=sum(ADS,"s"),act=ADS.filter(active).length;
-$("#kpis").innerHTML=[[ADS.length,"ads analysed"],[24,"images in export"],[fmt(totL),"total likes"],[fmt(totC),"total comments"],[fmt(totS),"total shares"],[act,"still active"]].map(([b,s])=>`<div class="kpi"><b>${b}</b><span>${s}</span></div>`).join("");
+const act=ADS.filter(active).length;
+$("#kpis").innerHTML=[[ADS.length,"ads"],[fmt(sum(ADS,"l")),"likes"],[fmt(sum(ADS,"c")),"comments"],[fmt(sum(ADS,"s")),"shares"],[act,"still running"]].map(([b,s])=>`<div class="kpi"><b>${b}</b><span>${s}</span></div>`).join("");
 
-function shots(g){const out=[];[...g].sort((a,b)=>b.l-a.l).forEach(a=>a.imgs.forEach((id,i)=>out.push({id,a,i})));
- return out.slice(0,8).map(o=>`<figure class="shot"><img src="img/${o.id}.jpg" alt="${o.a.h?o.a.h.replace(/"/g,"&quot;"):"Ad"} (ad #${o.a.r})" loading="lazy" data-zoom><figcaption>#${o.a.r}${o.a.n>1?" card "+(o.i+1):""} · ${fmt(o.a.l)} likes</figcaption></figure>`).join("")}
-// Angles
 $("#angles").innerHTML=ORDER.map(k=>{
- const g=LOOKUP(k),A=ANG[k],mx=Math.max(...g.map(days)),mn=Math.min(...g.map(a=>a.l)),mxl=Math.max(...g.map(a=>a.l));
- return `<article class="angle${A.top?" top":""}"><div>
-  <div class="rank">${A.top?'<span class="badge win">Top performer</span>':""}<span class="badge">${g.length} ${g.length>1?"ads":"ad"}</span>${g.some(active)?'<span class="badge">Active</span>':""}</div>
-  <h3>${A.name}</h3><p>${A.why}</p>
-  <div class="stats"><div><b>${fmt(sum(g,"l"))}</b><span>likes</span></div><div><b>${fmt(sum(g,"c"))}</b><span>comments</span></div><div><b>${fmt(sum(g,"s"))}</b><span>shares</span></div><div><b>${mx}</b><span>days (longest)</span></div></div>
-  ${g.length>1&&mn>0?`<p class="mini">Best vs weakest variant: ${fmt(mxl)} vs ${fmt(mn)} likes (${(mxl/mn).toFixed(1)}×)</p>`:""}
- </div><div class="right"><h4>Brief for the designer</h4><ul>${A.brief.map(x=>`<li>${x}</li>`).join("")}</ul>
-  <dl class="spec"><dt>Test</dt><dd>${A.test}</dd><dt>Format</dt><dd>${A.fmt}</dd></dl></div>
-  <div class="shots">${shots(g)}</div></article>`}).join("");
+ const g=ADS.filter(a=>a.a===k).sort((a,b)=>b.l-a.l),A=ANG[k];
+ return `<article class="angle${A.top?" top":""}">
+  <div class="top-row"><h3>${A.name}</h3>${A.top?'<span class="badge win">Top performer</span>':""}</div>
+  <p class="line">${A.line}</p>
+  <div class="stats"><div><b>${fmt(sum(g,"l"))}</b><span>likes</span></div><div><b>${fmt(sum(g,"c"))}</b><span>comments</span></div><div><b>${fmt(sum(g,"s"))}</b><span>shares</span></div></div>
+  <div class="shots">${g.map(a=>`<figure class="shot"><img src="img/${a.imgs[0]}.jpg" alt="Ad ${a.r}" loading="lazy" data-zoom><figcaption><a href="https://www.facebook.com/${a.post}" target="_blank" rel="noopener">#${a.r}</a> · ${fmt(a.l)} likes</figcaption></figure>`).join("")}</div>
+  <div class="brief"><div><h4>Make</h4><ul>${A.make.map(x=>`<li>${x}</li>`).join("")}</ul></div><div><h4>Test</h4><p>${A.test}</p></div></div>
+ </article>`}).join("");
 
-// Copy bank
-const byH={};ADS.forEach(a=>{if(!a.h)return;(byH[a.h]=byH[a.h]||{h:a.h,d:a.d,l:0,c:0,n:0});byH[a.h].l+=a.l;byH[a.h].c+=a.c;byH[a.h].n++});
-$("#copybank").innerHTML=Object.values(byH).sort((x,y)=>y.l-x.l).map(x=>`<div class="hl"><div><b>${x.h}</b><div class="d mini" style="font-family:var(--f-body)">${x.d&&x.d.length<140?x.d:(x.d||"").slice(0,140)+(x.d&&x.d.length>140?"…":"")}</div></div><div class="mini" style="text-align:right;white-space:nowrap">${fmt(x.l)} likes<br>${x.n} ${x.n>1?"placements":"placement"}<br><button class="copy" data-t="${x.h.replace(/"/g,"&quot;")}">Copy headline</button></div></div>`).join("");
-document.addEventListener("click",e=>{const b=e.target.closest(".copy");if(!b)return;const t=b.dataset.t;const done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy headline",1400)};
- (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(b.closest(".hl").querySelector("b"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected"})});
+const byH={};ADS.forEach(a=>{if(!a.h)return;(byH[a.h]=byH[a.h]||{h:a.h,l:0});byH[a.h].l+=a.l});
+$("#copybank").innerHTML=Object.values(byH).sort((x,y)=>y.l-x.l).map(x=>`<div class="hl"><b>${x.h}</b><span class="mini">${fmt(x.l)} likes</span></div>`).join("");
 
-// Library
-const fl=$("#filters");let cur="all";
-const opts=[["all","All"],...ORDER.map(k=>[k,ANG[k].name])];
-function drawGrid(){
- fl.innerHTML=opts.map(([k,n])=>`<button type="button" data-k="${k}" aria-pressed="${k===cur}">${n}</button>`).join("");
- $("#grid").innerHTML=ADS.filter(a=>cur==="all"||a.a===cur).map(a=>{
-  return `<article class="ad">${a.n>1?`<div class="strip">${a.imgs.map((id,i)=>`<img src="img/${id}.jpg" alt="Carousel card ${i+1}" loading="lazy" data-zoom>`).join("")}</div>`:`<div class="pic"><img src="img/${a.imgs[0]}.jpg" alt="${(a.h||"Ad").replace(/"/g,"&quot;")}" loading="lazy" data-zoom></div>`}<div class="row"><span class="badge${a.r===1?" win":""}">#${a.r}</span><span class="badge">${ANG[a.a].name}</span>${active(a)?'<span class="badge">Active</span>':""}</div>
-  <div class="h">${a.h||"No headline in export"}</div>${a.d?`<div class="d">${a.d}</div>`:""}
-  <div class="stats"><div><b>${fmt(a.l)}</b><span>likes</span></div><div><b>${fmt(a.c)}</b><span>comments</span></div><div><b>${fmt(a.s)}</b><span>shares</span></div></div>
-  <div class="mini">${a.fmt} · CTA: ${a.cta||"none"}<br>${a.created} → ${a.last} (${days(a)} days)<br>${a.geo.join(", ")}<br>Page: ${a.pg}</div>
-  <div class="links"><a href="https://www.facebook.com/${a.post}" target="_blank" rel="noopener">Facebook post</a></div></article>`}).join("");
-}
-fl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.k;drawGrid()});
-drawGrid();
-
-// Geo
-const geo={};ADS.forEach(a=>a.geo.forEach(g=>{(geo[g]=geo[g]||{n:0,l:0});geo[g].n++;geo[g].l+=a.l}));
-const gm=Math.max(...Object.values(geo).map(x=>x.l));
-$("#geo tbody").innerHTML=Object.entries(geo).sort((a,b)=>b[1].l-a[1].l).map(([g,v])=>`<tr><td>${g}</td><td class="n">${v.n}</td><td class="n">${fmt(v.l)}</td><td style="width:35%"><div class="bar"><i style="width:${(v.l/gm*100).toFixed(1)}%"></i></div></td></tr>`).join("");
 document.addEventListener("click",e=>{const i=e.target.closest("[data-zoom]");if(i){const lb=$("#lb");lb.querySelector("img").src=i.src;lb.hidden=false}else if(e.target.closest("#lb")){$("#lb").hidden=true}});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#lb").hidden=true});
 </script>
